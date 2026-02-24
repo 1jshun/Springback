@@ -24,12 +24,12 @@ public class UserController {
         return ResponseEntity.ok("성공");
     }
 
-    @PostMapping("/login")
-    public ResponseEntity login(@RequestBody UserDto.LoginReq dto) {
-        UserDto.LoginRes result = userService.login(dto);
-        if (result == null) {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("로그인 실패");
-        }
-        return ResponseEntity.ok(result);
-    }
+//    @PostMapping("/login")
+//    public ResponseEntity login(@RequestBody UserDto.LoginReq dto) {
+//        UserDto.LoginRes result = userService.login(dto);
+//        if (result == null) {
+//            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("로그인 실패");
+//        }
+//        return ResponseEntity.ok(result);
+//    }
 }
