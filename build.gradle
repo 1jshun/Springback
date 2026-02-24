@@ -20,13 +20,6 @@ repositories {
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
-    implementation 'org.springframework.boot:spring-boot-starter-security'
-    implementation 'org.springframework.boot:spring-boot-starter-mail'
-
-    implementation 'io.jsonwebtoken:jjwt-api:0.12.6'
-    implementation 'io.jsonwebtoken:jjwt-impl:0.12.6'
-    implementation 'io.jsonwebtoken:jjwt-orgjson:0.12.6'
-
 
     implementation 'org.mariadb.jdbc:mariadb-java-client:3.4.1'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
