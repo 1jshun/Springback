@@ -33,11 +33,12 @@ public class JwtFilter extends OncePerRequestFilter {
                 if (cookie.getName().equals("ATOKEN")) {
                     // JwtUtil에서 토큰 생성 및 확인하도록 리팩토링
                     String username = JwtUtil.getUsername(cookie.getValue());
+                    String role = JwtUtil.getRole(cookie.getValue());
 
                     Authentication authentication = new UsernamePasswordAuthenticationToken(
                             username,
                             null,
-                            List.of(new SimpleGrantedAuthority("ROLE_USER"))
+                            List.of(new SimpleGrantedAuthority(role))
                     );
                     SecurityContextHolder.getContext().setAuthentication(authentication);
                 }

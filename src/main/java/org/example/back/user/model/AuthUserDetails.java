@@ -17,6 +17,7 @@ public class AuthUserDetails implements UserDetails {
     private final String name;
     private final String password;
     private boolean enable;
+    private String role;
 
     public static AuthUserDetails from(User entity) {
         return AuthUserDetails.builder()
@@ -25,13 +26,14 @@ public class AuthUserDetails implements UserDetails {
                 .name(entity.getName())
                 .password(entity.getPassword())
                 .enable(entity.isEnable())
+                .role(entity.getRole())
                 .build();
     }
 
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return List.of(new SimpleGrantedAuthority("ROLE_USER"));
+        return List.of(new SimpleGrantedAuthority(this.role));
     }
     @Override
     public String getPassword() { return this.password; }
