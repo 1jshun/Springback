@@ -22,4 +22,5 @@ public class User {
     private String password;
 
     private boolean enable;
+    private String role;
 }
