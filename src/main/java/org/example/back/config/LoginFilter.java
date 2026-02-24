@@ -41,7 +41,9 @@ public class LoginFilter extends UsernamePasswordAuthenticationFilter {
 
     @Override
     protected void unsuccessfulAuthentication(HttpServletRequest request, HttpServletResponse response, AuthenticationException failed) throws IOException, ServletException {
-        response.getWriter().write("login failed");
+        response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+        response.setContentType("application/plain;charset=utf-8");
+        response.getWriter().write("로그인 정보가 올바르지 않습니다.");
     }
 
     // TODO : 1번
