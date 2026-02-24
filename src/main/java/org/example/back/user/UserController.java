@@ -24,6 +24,13 @@ public class UserController {
         return ResponseEntity.ok("성공");
     }
 
+    @GetMapping("/verify")
+    public ResponseEntity<String> verify(@RequestParam String uuid) {
+        userService.verify(uuid);
+        return ResponseEntity.ok("이메일 인증이 완료되었습니다. 이제 로그인이 가능합니다.");
+    }
+
+
 //    @PostMapping("/login")
 //    public ResponseEntity login(@RequestBody UserDto.LoginReq dto) {
 //        UserDto.LoginRes result = userService.login(dto);
